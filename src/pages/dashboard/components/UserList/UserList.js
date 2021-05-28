@@ -3,6 +3,9 @@ import { UserListWrapper, UserActionWrapper } from './UserList.style';
 
 import { useTable } from 'react-table';
 
+//icons
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
 const UserList = ({ data, cells = [] }) => {
 	const columns = useMemo(
 		() => [
@@ -75,22 +78,18 @@ const UserList = ({ data, cells = [] }) => {
 	);
 };
 const Action = () => {
-	const [dropdownOpen, setDropdownOpen] = useState(false);
 	return (
 		<UserActionWrapper>
 			<button className='button blue-button'>View more</button>
 			<button className='button red-button'>Watch Live</button>
-			<button
-				className='button gray-button'
-				onclick={() => setDropdownOpen(!dropdownOpen)}>
-				Watch Live
-			</button>
-			{dropdownOpen ? (
-				<div>
-					<button>Edit</button>
-					<button>Delete</button>
+			<button className='button more-button gray-button'>
+				More <KeyboardArrowDownIcon />
+				<div className='more'>
+					<button className='more__button gray-button'>Edit</button>
+					<button className='more__button gray-button'>Delete</button>
+					<button className='more__button gray-button'>Refresh Data</button>
 				</div>
-			) : null}
+			</button>
 		</UserActionWrapper>
 	);
 };

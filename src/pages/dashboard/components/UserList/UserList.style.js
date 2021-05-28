@@ -18,9 +18,6 @@ export const UserListWrapper = styled.div`
 			color: #354664;
 			font-weight: 500;
 		}
-		tr:hover {
-			background-color: #ddd;
-		}
 
 		th {
 			border: 2px solid #e4e5ea;
@@ -34,14 +31,18 @@ export const UserListWrapper = styled.div`
 `;
 
 export const UserActionWrapper = styled.div`
+	display: flex;
 	.button {
 		outline: none;
 		border-width: 0;
 		border-radius: 5px;
-		padding: 2.5% 5%;
+		padding: 2% 4%;
 		margin: 1%;
 		color: white;
 		font-size: medium;
+	}
+	button:hover {
+		filter: brightness(90%);
 	}
 	.red-button {
 		background-color: #ef0065;
@@ -52,5 +53,28 @@ export const UserActionWrapper = styled.div`
 	.gray-button {
 		background-color: #ebecf0;
 		color: #354664;
+	}
+	.more-button {
+		display: flex;
+	}
+	.more-button:hover {
+		.more {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.more {
+		display: none;
+		position: absolute;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		padding: 10%;
+		background-color: rgba(0, 0, 0, 0.2);
+		.more__button {
+			padding: 1em;
+			margin: 1%;
+			font-size: medium;
+			border-width: 0;
+			border-radius: 5px;
+		}
 	}
 `;
