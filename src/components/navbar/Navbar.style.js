@@ -12,6 +12,13 @@ const Style = styled.div`
 		flex: 0.45;
 		justify-content: space-between;
 	}
+	.nav-itemContainer {
+		display: flex;
+
+		* {
+			margin: auto 5%;
+		}
+	}
 `;
 
 export default Style;
