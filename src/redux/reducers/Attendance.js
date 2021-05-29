@@ -1,3 +1,10 @@
+import {
+	SET_CURRENT_EDITING_CELL,
+	SET_ATTENDANCE,
+	SET_ATTENDANCE_USER,
+	DELETE_USER_ATTENDANCE,
+} from '../actions/Attendance';
+
 const initialState = {
 	data: [
 		{
@@ -53,14 +60,24 @@ const initialState = {
 			],
 		},
 	],
+	currentEditingCell: false,
 };
 const AttendanceReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case 'SET_DATA':
+		case SET_CURRENT_EDITING_CELL:
+			return { ...state, currentEditingCell: action.payload };
+		case SET_ATTENDANCE:
+			return { ...state, data: action.payload };
+		case SET_ATTENDANCE_USER:
+			var newAttendance = state.data;
+			newAttendance[action.payload.index] = action.payload.data;
+			return { ...state, data: newAttendance };
+		case DELETE_USER_ATTENDANCE:
 			var newData = state.data;
-			newData[newData.findIndex((el) => el.id === action.payload.id)] =
-				action.payload;
-			return { data: newData };
+			newData.splice(action.payload, 1);
+
+			return { ...state, data: [...newData] };
+
 		default:
 			return state;
 	}
