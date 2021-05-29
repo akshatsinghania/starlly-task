@@ -3,69 +3,19 @@ import { DashboardWrapper } from './Dashboard.style';
 import axios from 'axios';
 import Table from './components/UserList/UserList';
 
+//redux
+import { useSelector } from 'react-redux';
+
 const Dashboard = () => {
-	const [attendanceData, setAttendanceData] = useState([
-		{
-			cameraId: '001',
-			officerName: 'John doe',
-			attendance: 98,
-			address: `Theodore Lowe
-			Ap #867-859 Sit Rd.
-			Azusa New York 39531
-			(793) 151-6230`,
-			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
-			],
-		},
-		{
-			cameraId: '001',
-			officerName: 'John doe',
-			attendance: 98,
-			address: `Theodore Lowe
-			Ap #867-859 Sit Rd.
-			Azusa New York 39531
-			(793) 151-6230`,
-			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
-			],
-		},
-		{
-			cameraId: '001',
-			officerName: 'John doe',
-			attendance: 98,
-			address: `Theodore Lowe
-			Ap #867-859 Sit Rd.
-			Azusa New York 39531
-			(793) 151-6230`,
-			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
-			],
-		},
-		{
-			cameraId: '001',
-			officerName: 'John doe',
-			attendance: 98,
-			address: `Theodore Lowe
-			Ap #867-859 Sit Rd.
-			Azusa New York 39531
-			(793) 151-6230`,
-			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
-			],
-		},
-	]);
+	const attendanceData = useSelector((state) => state.attendance.data);
 
 	useEffect(() => {
-		axios.post('https://reqres.in/api/users', attendanceData).then((res) => {
-			setAttendanceData(res.data);
-		});
-		return () => {
-			setAttendanceData([]);
-		};
+		// axios.post('https://reqres.in/api/users', attendanceData).then((res) => {
+		// 	setAttendanceData(res.data);
+		// });
+		// return () => {
+		// 	setAttendanceData([]);
+		// };
 	}, []);
 	return (
 		<DashboardWrapper>
