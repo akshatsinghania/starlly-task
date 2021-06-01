@@ -1,21 +1,13 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { UserListWrapper } from './UserList.style';
 import { useTable } from 'react-table';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	getAttendance,
-	setAttendance,
-} from '../../../../redux/actions/Attendance';
+import { getAttendance } from '../../../../redux/actions/Attendance';
 import Action from './components/action/Action';
 import EditableCell from './components/editableCell/EditableCell';
 
 const UserList = () => {
 	const attendanceData = useSelector((state) => state.attendance);
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(getAttendance());
-	}, [dispatch]);
 
 	const columns = useMemo(
 		() => [

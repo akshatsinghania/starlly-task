@@ -16,47 +16,94 @@ const initialState = {
             Azusa New York 39531
             (793) 151-6230`,
 			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
+				{ time: 1621255200000, value: 23 },
+				{ time: 1621215200000, value: 32 },
+				{ time: 1621615200000, value: 25 },
+				{ time: 1623615100000, value: 10 },
 			],
 		},
 		{
-			cameraId: '001',
-			officerName: 'John doe',
-			attendance: 98,
+			cameraId: '002',
+			officerName: 'John doe 2',
+			attendance: 65,
 			address: `Theodore Lowe
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
 			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
+				{ time: 1622365200000, value: 59 },
+				{ time: 1622355200000, value: 18 },
+				{ time: 1621255200000, value: 23 },
+				{ time: 1621215200000, value: 10 },
+				{ time: 1621615200000, value: 25 },
+				{ time: 1623615100000, value: 10 },
 			],
 		},
 		{
-			cameraId: '001',
-			officerName: 'John doe',
-			attendance: 98,
+			cameraId: '002',
+			officerName: 'John doe 211',
+			attendance: 65,
 			address: `Theodore Lowe
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
 			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
+				{ time: 1622365200000, value: 59 },
+				{ time: 1622355200000, value: 18 },
+				{ time: 1621255200000, value: 23 },
+				{ time: 1621215200000, value: 32 },
+				{ time: 1621615200000, value: 75 },
 			],
 		},
 		{
-			cameraId: '001',
-			officerName: 'John doe',
-			attendance: 98,
+			cameraId: '002',
+			officerName: 'John doe X',
+			attendance: 65,
 			address: `Theodore Lowe
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
 			status: [
-				{ time: 9, value: 100 },
-				{ time: 10, value: 80 },
+				{ time: 1622365200000, value: 59 },
+				{ time: 1622355200000, value: 18 },
+				{ time: 1621255200000, value: 23 },
+				{ time: 1621215200000, value: 66 },
+
+				{ time: 1623615100000, value: 10 },
+			],
+		},
+		{
+			cameraId: '002',
+			officerName: 'John doe y',
+			attendance: 65,
+			address: `Theodore Lowe
+            Ap #867-859 Sit Rd.
+            Azusa New York 39531
+            (793) 151-6230`,
+			status: [
+				{ time: 1622365200000, value: 59 },
+				{ time: 1622355200000, value: 18 },
+				{ time: 1621255200000, value: 23 },
+				{ time: 1621215200000, value: 80 },
+
+				{ time: 1623615100000, value: 17 },
+			],
+		},
+		{
+			cameraId: '002',
+			officerName: 'John doe X',
+			attendance: 65,
+			address: `Theodore Lowe
+            Ap #867-859 Sit Rd.
+            Azusa New York 39531
+            (793) 151-6230`,
+			status: [
+				{ time: 1622365200000, value: 59 },
+
+				{ time: 1621255200000, value: 18 },
+				{ time: 1621215200000, value: 32 },
+				{ time: 1621615200000, value: 25 },
+				{ time: 1623615100000, value: 18 },
 			],
 		},
 	],
