@@ -6,6 +6,19 @@ import {
 	RERENDER_GRAPH,
 } from '../actions/Attendance';
 
+const randomStatus = () => {
+	var array = [];
+	var i = 0;
+	while (i < 21) {
+		array.push({
+			time: Math.floor(Math.random() * 100000000),
+			value: Math.floor(Math.random() * 100),
+		});
+		i++;
+	}
+	return array;
+};
+console.log({ status: randomStatus() });
 const initialState = {
 	data: [
 		{
@@ -16,12 +29,7 @@ const initialState = {
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
-			status: [
-				{ time: 1621255200000, value: 23 },
-				{ time: 1621215200000, value: 32 },
-				{ time: 1621615200000, value: 25 },
-				{ time: 1623615100000, value: 10 },
-			],
+			status: randomStatus(),
 		},
 		{
 			cameraId: '002',
@@ -31,14 +39,7 @@ const initialState = {
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
-			status: [
-				{ time: 1622365200000, value: 59 },
-				{ time: 1622355200000, value: 18 },
-				{ time: 1621255200000, value: 23 },
-				{ time: 1621215200000, value: 10 },
-				{ time: 1621615200000, value: 25 },
-				{ time: 1623615100000, value: 10 },
-			],
+			status: randomStatus(),
 		},
 		{
 			cameraId: '002',
@@ -48,13 +49,7 @@ const initialState = {
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
-			status: [
-				{ time: 1622365200000, value: 59 },
-				{ time: 1622355200000, value: 18 },
-				{ time: 1621255200000, value: 23 },
-				{ time: 1621215200000, value: 32 },
-				{ time: 1621615200000, value: 75 },
-			],
+			status: randomStatus(),
 		},
 		{
 			cameraId: '002',
@@ -64,14 +59,7 @@ const initialState = {
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
-			status: [
-				{ time: 1622365200000, value: 59 },
-				{ time: 1622355200000, value: 18 },
-				{ time: 1621255200000, value: 23 },
-				{ time: 1621215200000, value: 66 },
-
-				{ time: 1623615100000, value: 10 },
-			],
+			status: randomStatus(),
 		},
 		{
 			cameraId: '002',
@@ -81,14 +69,7 @@ const initialState = {
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
-			status: [
-				{ time: 1622365200000, value: 59 },
-				{ time: 1622355200000, value: 18 },
-				{ time: 1621255200000, value: 23 },
-				{ time: 1621215200000, value: 80 },
-
-				{ time: 1623615100000, value: 17 },
-			],
+			status: randomStatus(),
 		},
 		{
 			cameraId: '002',
@@ -98,14 +79,27 @@ const initialState = {
             Ap #867-859 Sit Rd.
             Azusa New York 39531
             (793) 151-6230`,
-			status: [
-				{ time: 1622365200000, value: 59 },
-
-				{ time: 1621255200000, value: 18 },
-				{ time: 1621215200000, value: 32 },
-				{ time: 1621615200000, value: 25 },
-				{ time: 1623615100000, value: 18 },
-			],
+			status: randomStatus(),
+		},
+		{
+			cameraId: '002',
+			officerName: 'John doe X',
+			attendance: 65,
+			address: `Theodore Lowe
+            Ap #867-859 Sit Rd.
+            Azusa New York 39531
+            (793) 151-6230`,
+			status: randomStatus(),
+		},
+		{
+			cameraId: '002',
+			officerName: 'John doe X',
+			attendance: 65,
+			address: `Theodore Lowe
+            Ap #867-859 Sit Rd.
+            Azusa New York 39531
+            (793) 151-6230`,
+			status: randomStatus(),
 		},
 	],
 	currentEditingCell: false,

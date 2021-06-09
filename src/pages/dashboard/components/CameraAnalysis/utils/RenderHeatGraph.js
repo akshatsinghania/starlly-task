@@ -29,7 +29,7 @@ const renderHeatMap = (data) => {
 	var y = d3.scaleBand().range([height, 0]).domain(officerNames).padding(0.01);
 	svg.append('g').call(d3.axisLeft(y));
 
-	var myColor = d3.scaleLinear().range(['aqua', 'darkblue']).domain([1, 100]);
+	var myColor = d3.scaleLinear().range(['#63d9d9', '#0e3939']).domain([1, 100]);
 
 	svg
 		.selectAll()

@@ -7,9 +7,7 @@ const EditableCell = ({ data }) => {
 	const currentEditingCell = useSelector(
 		(s) => s.attendance.currentEditingCell,
 	);
-	const cellData = useSelector(
-		(s) => s.attendance.data[data.row.index][data.cell.column.id],
-	);
+
 	const dispatch = useDispatch();
 
 	const changeCellData = ({ target: { value } }) => {
@@ -24,9 +22,9 @@ const EditableCell = ({ data }) => {
 	return (
 		<EditableCellWrapper>
 			{data.row.index === currentEditingCell ? (
-				<input className='input' value={cellData} onChange={changeCellData} />
+				<input className='input' value={data.value} onChange={changeCellData} />
 			) : (
-				<span>{cellData}</span>
+				<span>{data.value}</span>
 			)}
 		</EditableCellWrapper>
 	);

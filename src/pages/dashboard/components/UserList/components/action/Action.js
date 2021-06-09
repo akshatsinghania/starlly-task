@@ -16,6 +16,7 @@ const Action = ({ rowIndex }) => {
 	const setEditing = () => {
 		dispatch(setCurrentEditingCell(rowIndex));
 	};
+	const refreshData = () => {};
 	return (
 		<ActionWrapper>
 			<button className='button blue-button'>View more</button>
@@ -33,9 +34,7 @@ const Action = ({ rowIndex }) => {
 						}}>
 						Delete
 					</button>
-					<button
-						onClick={() => dispatch(reRenderGraph())}
-						className='more__button gray-button'>
+					<button onClick={refreshData} className='more__button gray-button'>
 						Refresh Data
 					</button>
 				</div>
