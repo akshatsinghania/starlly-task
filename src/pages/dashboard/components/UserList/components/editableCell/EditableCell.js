@@ -12,7 +12,8 @@ const EditableCell = ({ data }) => {
 	);
 	const dispatch = useDispatch();
 
-	const changeCellData = (value) => {
+	const changeCellData = ({ targe: { value } }) => {
+		console.log('change');
 		dispatch(
 			setAttendanceUser(data.row.index, {
 				...data.row.original,
@@ -24,11 +25,7 @@ const EditableCell = ({ data }) => {
 	return (
 		<EditableCellWrapper>
 			{data.row.index === currentEditingCell ? (
-				<input
-					className='input'
-					value={cellData}
-					onChange={(e) => changeCellData(e.target.value)}
-				/>
+				<input className='input' value={cellData} onChange={changeCellData} />
 			) : (
 				<span>{cellData}</span>
 			)}

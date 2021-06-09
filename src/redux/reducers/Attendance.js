@@ -3,6 +3,7 @@ import {
 	SET_ATTENDANCE,
 	SET_ATTENDANCE_USER,
 	DELETE_USER_ATTENDANCE,
+	RERENDER_GRAPH,
 } from '../actions/Attendance';
 
 const initialState = {
@@ -108,6 +109,7 @@ const initialState = {
 		},
 	],
 	currentEditingCell: false,
+	reRender: false,
 };
 const AttendanceReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -116,6 +118,7 @@ const AttendanceReducer = (state = initialState, action) => {
 		case SET_ATTENDANCE:
 			return { ...state, data: action.payload };
 		case SET_ATTENDANCE_USER:
+			console.log('set');
 			var newAttendance = state.data;
 			newAttendance[action.payload.index] = action.payload.data;
 			return { ...state, data: newAttendance };
@@ -124,6 +127,9 @@ const AttendanceReducer = (state = initialState, action) => {
 			newData.splice(action.payload, 1);
 
 			return { ...state, data: [...newData] };
+		case RERENDER_GRAPH:
+			console.log(state);
+			return { ...state, reRender: !state.reRender };
 
 		default:
 			return state;

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
 	setCurrentEditingCell,
 	deleteUserAttendance,
+	reRenderGraph,
 } from '../../../../../../redux/actions/Attendance';
 
 const Action = ({ rowIndex }) => {
@@ -14,7 +15,6 @@ const Action = ({ rowIndex }) => {
 	);
 	const setEditing = () => {
 		dispatch(setCurrentEditingCell(rowIndex));
-		console.log(currentEditingCell);
 	};
 	return (
 		<ActionWrapper>
@@ -33,7 +33,11 @@ const Action = ({ rowIndex }) => {
 						}}>
 						Delete
 					</button>
-					<button className='more__button gray-button'>Refresh Data</button>
+					<button
+						onClick={() => dispatch(reRenderGraph())}
+						className='more__button gray-button'>
+						Refresh Data
+					</button>
 				</div>
 			</button>
 		</ActionWrapper>

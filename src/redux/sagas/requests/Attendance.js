@@ -1,7 +1,5 @@
 import axios from 'axios';
 
 export const getAttendance = (data) => {
-	return axios.get('https://reqres.in/api/products/3', {
-		data,
-	});
+	return axios.post('https://reqres.in/api/attendance', data);
 };
