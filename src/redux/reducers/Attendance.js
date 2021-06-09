@@ -118,17 +118,14 @@ const AttendanceReducer = (state = initialState, action) => {
 		case SET_ATTENDANCE:
 			return { ...state, data: action.payload };
 		case SET_ATTENDANCE_USER:
-			console.log('set');
-			var newAttendance = state.data;
+			var newAttendance = [...state.data];
 			newAttendance[action.payload.index] = action.payload.data;
 			return { ...state, data: newAttendance };
 		case DELETE_USER_ATTENDANCE:
-			var newData = state.data;
+			var newData = [...state.data];
 			newData.splice(action.payload, 1);
-
 			return { ...state, data: [...newData] };
 		case RERENDER_GRAPH:
-			console.log(state);
 			return { ...state, reRender: !state.reRender };
 
 		default:

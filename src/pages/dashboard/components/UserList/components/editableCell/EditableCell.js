@@ -12,8 +12,7 @@ const EditableCell = ({ data }) => {
 	);
 	const dispatch = useDispatch();
 
-	const changeCellData = ({ targe: { value } }) => {
-		console.log('change');
+	const changeCellData = ({ target: { value } }) => {
 		dispatch(
 			setAttendanceUser(data.row.index, {
 				...data.row.original,

@@ -7,11 +7,13 @@ import { useSelector } from 'react-redux';
 
 const CameraAnalysis = () => {
 	const attendanceData = useSelector((state) => state.attendance.data);
+
 	const reRender = useSelector((state) => state.reRender);
 
 	useEffect(() => {
 		renderHeatMap(attendanceData);
-	}, [attendanceData, reRender]);
+		console.log(attendanceData);
+	}, [attendanceData]);
 	return (
 		<CameraAnalysisWrapper>
 			<div id='my_dataviz'></div>
