@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAttendance } from '../../../../redux/actions/Attendance';
 import Action from './components/action/Action';
 import EditableCell from './components/editableCell/EditableCell';
+import Status from './components/status/Status';
 
 const UserList = () => {
 	const attendanceData = useSelector((state) => state.attendance);
@@ -34,7 +35,7 @@ const UserList = () => {
 			{
 				Header: 'Status',
 				accessor: 'status',
-				Cell: ({ row: { original } }) => original.status[0].value,
+				Cell: ({ row }) => <Status row={row} />,
 			},
 			{
 				Header: 'Action',
@@ -44,13 +45,8 @@ const UserList = () => {
 		],
 		[],
 	);
-	const {
-		getTableProps,
-		getTableBodyProps,
-		headerGroups,
-		rows,
-		prepareRow,
-	} = useTable({ columns, data: attendanceData.data });
+	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+		useTable({ columns, data: attendanceData.data });
 
 	return (
 		<UserListWrapper>

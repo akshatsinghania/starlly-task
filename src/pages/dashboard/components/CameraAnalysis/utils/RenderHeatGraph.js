@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import CalculateGraphData from './CalculateGraphData';
+import CalculateGraphData from '../../utils/CalculateGraphData';
 
 const renderHeatMap = (data) => {
 	const { officerNames, status, times } = CalculateGraphData(data);

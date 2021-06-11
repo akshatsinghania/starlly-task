@@ -18,7 +18,7 @@ const randomStatus = () => {
 	}
 	return array;
 };
-console.log({ status: randomStatus() });
+
 const initialState = {
 	data: [
 		{

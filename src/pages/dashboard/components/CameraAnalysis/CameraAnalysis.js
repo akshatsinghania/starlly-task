@@ -12,7 +12,6 @@ const CameraAnalysis = () => {
 
 	useEffect(() => {
 		renderHeatMap(attendanceData);
-		console.log(attendanceData);
 	}, [attendanceData]);
 	return (
 		<CameraAnalysisWrapper>
